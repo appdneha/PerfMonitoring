@@ -1,0 +1,110 @@
+	Premium Dashboard Project 	Commented [M(1]: would rename it slightly :) 
+ 
+ 
+ 
+ 
+Project description 
+ 
+A monitoring setup to forecast an upcoming performance challenge in target controller.
+ 
+ 
+ 
+Objective
+ 
+This is to reduce the frequency of incidents occurring on controller hosts due to performance threshold breach.
+ 
+ 
+Feature requests 
+ 
+. Premium Support should be able to receive alerts against the respective breach of threshold. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Expected outcome/success criteria 
+ 
+Project scope and goals - Design/Automate a script that can run at pre-defined/ specific intervals on an account or on a set of accounts and which must be easily scalable (vertically and horizontally) 
+ 
+-	alerts to be triggered if a certain threshold is met, 
+-	daily usage to be tracked, 
+-	identify key stakeholders, 
+-	primary - Premium Support CX Managers, Premium OPs team 
+-	secondary - PRE team, Analytics OPs 
+ 
+Brainstorm potential success criteria - Proactively identifying factors which could lead to daily limits getting hit and help initiate remediation activities. 
+ 
+Enhancements: Automate reporting for daily usage limits so that limits can be adjusted accordingly. 
+ 
+ 
+Technologies used 
+ 
+Application is being made in Laravel, a PHP framework; a combination of 
+PHP/JavaScript/Tailwind. Database used for the project: MySQL. Python for long running services. 
+ 
+Technologies used in the stack: 
+•	Python 
+•	PHP 
+•	JavaScript 
+•	MySQL 
+•	Redis, 
+•	Nginx, 
+•	Docker 
+ 
+ 
+Internal services: 
+•	API for Elasticsearch (Analytics backend), to fetch the current license usage per cluster and customer, 
+•	License details service, for getting up-to-date license usage, 
+•	Account usage service, 
+•	Notifications service, for setting up alerts. 
+APIs & integrations: 
+•	Elasticsearch 
+•	BDB integration for email notifications, 
+•	A Webex Bot integration for instant messages about the license limits being reached 
+(similar to Webex Zendesk tickets integration) 
+Architecture Data Flow 
+ 
+Commented [M(3]: requirement to script - allow easy scalability - horizontally and vertically   
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+Project’s main tasks  • Project setup 
+Installing Laravel framework, Docker, Tailwind, setting up builders 
+•	Application setup 
+Configuring framework (Laravel, Tailwind), creating Docker environment 
+•	Database schema 
+Designing all required tables and schemas to store account data 
+• Dashboard and additional views 
+Creating dashboard view, customers view, accounts & limits, license usage view, charts 
+•	License Service (API) 
+Internal service to retrieve account details & usage from Elasticsearch 
+•	Account Sync Service 
+Internal service to retrieve account details through the API 
+•	Usage Sync Service  
+Internal service for retrieving Account usage through the API 
+• Queues 
+Implementing global queue for processing messages between web application and workers 
+•	Notifications 
+Implementing notification/alerting system about certain thresholds being reached 
+•	Deployment 
+Accessing the AppD internal network from RunOn instance, deploying CI/CD pipeline. 
+ 
+ 
+ 
+ 
+Team responsibilities 
+ 
+•	Miroslaw Sztorc 
+Fullstack software engineer. Layout design, API integrations, web API, project setup, services design. Code review, CI/CD pipelines. 
+•	Piotr Duda 
+EUM/Analytics expert, Elasticsearch consulting, license usage scripts prototyping in Python. 
+•	Adam Sienski 
+DevOps, Networking, Cisco RunOn setup. 
+ 
